@@ -24,5 +24,14 @@ function login() {
         body: JSON.stringify(req),
     })
         .then((res) => res.json()) //fetch로 전달하고 응답한 데이터를 다시 받음
-        .then((res) => console.log(res));
+        .then((res) => {
+            if (res.success) {
+                location.href = "/"; // response 값이 success일 시 루트로 이동
+            } else {
+                alert(res.msg); // 서버에서 전달한 메세지
+            }
+        })
+        .catch((err) => {
+            console.error("로그인 중 에러 발생"); // 새로운 에러 발생 찾기
+        });
 }
