@@ -1,6 +1,6 @@
 "use strict";
 
-const app = require("../../app");
+const app = require("../../app"); // app.js를 불러 옴
 const PORT = 3000;
 
 app.listen(PORT, () => {
